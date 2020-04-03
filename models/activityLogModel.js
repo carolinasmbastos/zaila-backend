@@ -33,12 +33,14 @@ exports.createActivityLog = (user, artwork) => {
         exhibitionId, 
         languageCode, 
         userId, 
-        time)
+        time,
+        event)
         VALUES (${cp.escape(artwork.artworkId)},
         ${cp.escape(artwork.exhibitionId)}, 
         ${cp.escape(user.preferredLanguage)}, 
         ${cp.escape(user.userId)},
-        ${cp.escape(time)})`
+        ${cp.escape(time)},
+        'tap')`
 
     return query(cp, sql);
 
