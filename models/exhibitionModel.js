@@ -25,6 +25,8 @@ exports.getAllExhibition = (exhibitionId, search) => {
 
     }
 
+    sqlQuery+= ` ORDER BY exhibition.exhibitionId`
+
     let options = { sql: sqlQuery, nestTables: true };
 
     console.log("sql: " + options.sql)
